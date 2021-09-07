@@ -1,5 +1,8 @@
 package design.pattern.structure.bridge;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 /**
  *  @Description: Test
  *  @ClassName: Test
@@ -25,5 +28,6 @@ public class Test {
         desktop.info();
 
 
+        Executors.newCachedThreadPool();
     }
 }

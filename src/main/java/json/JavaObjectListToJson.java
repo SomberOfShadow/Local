@@ -36,9 +36,11 @@ public class JavaObjectListToJson {
             next.setName(next.getName().replace("Resource", ""));
         }
 
-        Gson prettyGson = new GsonBuilder().setPrettyPrinting().create();
+//        Gson prettyGson = new GsonBuilder().setPrettyPrinting().create();
+        Gson prettyGson = new Gson();
         String s = prettyGson.toJson(copyOnWriteArrayList);
-        System.out.println(s);
+        String ss = s.replace("\\n", "");
+        System.out.println(ss);
         System.out.println("===========================");
 
     }
@@ -64,30 +66,3 @@ public class JavaObjectListToJson {
 
 }
 
-class Example{
-    String name;
-    int id;
-
-    public Example(String name, int id) {
-        this.name = name;
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public Example setName(String name) {
-        this.name = name;
-        return this;
-    }
-
-    public Example setId(int id) {
-        this.id = id;
-        return this;
-    }
-}
